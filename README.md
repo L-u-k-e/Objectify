@@ -73,7 +73,7 @@ MyClass.prototype.sayHi = function(){
 var myInstance = new MyClass();
 document.body.appendChild(myInstance);
 console.log(myInstance) //[HTMLDivElement]  
-console.log(myInstance
+console.log(myInstance.object_) //MyClass:{ div1:[HTMLDivElement], div2:[HTMLDivElement], button:[HTMLButtonElement]}
 ```
 
 -----------------
