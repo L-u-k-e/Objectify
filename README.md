@@ -18,7 +18,7 @@ $(body).on('click', '.my-objects-class>...>button', function(event){
 Rather than this:
 
 ```javascript
-$('.my-objects-class').on('click', '.my-objects-class>...>button', function(event){
+$(body).on('click', '.my-objects-class>...>button', function(event){
   $(event.target).parents('.my-objects-class')[0].object_.instanceMethod();
 }
 ```
