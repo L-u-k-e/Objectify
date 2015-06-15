@@ -72,15 +72,14 @@ MyClass.prototype.sayHi = function(){
 ```javascript
 var myInstance = new MyClass();
 document.body.appendChild(myInstance);
-console.log(myInstance) //[HTMLDivElement]  
-console.log(myInstance.object_) //MyClass:{ div1:[HTMLDivElement], div2:[HTMLDivElement], button:[HTMLButtonElement]}
+console.log(myInstance); //[HTMLDivElement]  
+console.log(myInstance.object_); //MyClass:{ div1:[HTMLDivElement], div2:[HTMLDivElement], button:[HTMLButtonElement]}
 ```
 
 -----------------
 
 ```javascript
 $(body).on('click','.my-class>div>div>button', function(event){
-  event.target.object_.sayHi();
-    //Hi from inside MyClass!
+  event.target.object_.sayHi(); //Hi from inside MyClass!
 });
 ``
