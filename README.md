@@ -46,4 +46,41 @@ These are the three variables you need to know about:
  - `object_` is the property that holds a reference to your object. This property will automatically be added to all children of `instance.element`(don't worry you can nest objects and everything will still work the way you want it to).
  - `element` is an instance vaiable that is added to your object, so you can reference it from within the class.  
  
-#Example Usage:
+#Example:
+
+```javascript
+function MyClass(){
+  register(this, 'div', {className: 'my-class'});
+  
+  this.div1 = document.createElement('div');
+  this.element.appendChild(this.div1);
+  this.div2 = document.createElement('div');
+  this.div1.appendChild(this.div2);
+  
+  this.button = document.createElement('button');
+  this.div2.appendChild(this.button);
+  
+  return this.element;
+}
+MyClass.prototype.sayHi = function(){
+  console.log('Hi from inside MyClass!');
+};
+```
+
+-----------------
+
+```javascript
+var myInstance = new MyClass();
+document.body.appendChild(myInstance);
+console.log(myInstance) //[HTMLDivElement]  
+console.log(myInstance
+```
+
+-----------------
+
+```javascript
+$(body).on('click','.my-class>div>div>button', function(event){
+  event.target.object_.sayHi();
+    //Hi from inside MyClass!
+});
+``
