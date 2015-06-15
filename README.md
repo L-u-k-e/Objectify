@@ -5,7 +5,7 @@ Objectify is a leightweight framework that aims to clean up event listeners and 
 Many aspects of GUI programming (and indeed Javascript in general) lend themselves to an OOP approach. You can define a class that churns out objects that are represented by elements in the DOM and implement event listeners that delegate all their work to instance methods (which have useful instance variables, and also other methods/functions, at their disposal).
 
 The problem left to solve when implementing the above approach is as follows: users interact with (and event listeners deal with) elements in the DOM, but your precious instance methods belong to an instance of a class that you created.  So, you need to create a link between your object and, not only the containing element that represents it, but also all of the children of that element that are ultimately going to be referenced via `event.target` 
-#####Enter Objectify!
+###Enter Objectify!
 **`Objectify`** instantiates a [`MutationObserver`](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver) object that listens for the addition of new nodes in the DOM. Whenever you add an element that is a child of an element that you have registered via the `register` method, a property, named `object_`, that holds a reference to the instance of your class, is automatically added to that element. 
 
 The end result is event listeners that look like this:
