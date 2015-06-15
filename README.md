@@ -1,6 +1,7 @@
 # What is Objectify?
 Objectify is a leightweight framework that aims to clean up event listeners and eliminate boilerplate code in class definitions. 
 
+#What problem does it solve?
 Many aspects of GUI programming (and indeed Javascript in general) lend themselves to an OOP approach. You can define a class that churns out widgets and implement event listeners that delegate all their work to instance methods (which have useful instance variables, and also other methods/functions, at their disposal).
 
 The problem left to solve when implementing the above approach is as follows: users interact with (and event listeners deal with) elements in the DOM, but your precious instance methods belong to an instance of a class that you created.  So, you need to create a link between your object and, not only the containing element that represents it, but also all of the children of that element that are ultimately going to be referenced via `event.target` 
