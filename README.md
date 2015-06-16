@@ -70,10 +70,10 @@ MyClass.prototype.sayHi = function(){
 -----------------
 
 ```javascript
-var myInstance = new MyClass();
-document.body.appendChild(myInstance);
-console.log(myInstance); //[HTMLDivElement]  
-console.log(myInstance.object_); //MyClass:{ div1:[HTMLDivElement], div2:[HTMLDivElement], button:[HTMLButtonElement]}
+var div = new MyClass();
+document.body.appendChild(div);
+console.log(div); //[HTMLDivElement]  
+console.log(div.object_); //MyClass:{ element:[HTMLDivElement], div1:[HTMLDivElement], div2:[HTMLDivElement], button:[HTMLButtonElement]}
 ```
 
 -----------------
