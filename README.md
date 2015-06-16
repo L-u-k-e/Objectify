@@ -44,7 +44,7 @@ These are the three variables you need to know about:
 ```
 
  - `object_` is the property that holds a reference to your object. This property will automatically be added to all children of `instance.element`(don't worry you can nest objects and everything will still work the way you want it to).
- - `element` is an instance vaiable that is added to your object, so you can reference it from within the class.  
+ - `element` is an instance variable that is added to your object, so you can reference the containing element from within the class.  
  
 #Example:
 
