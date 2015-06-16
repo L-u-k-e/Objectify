@@ -11,14 +11,14 @@ The problem left to solve when implementing the above approach is as follows: us
 The end result is event listeners that look like this:
 
 ```javascript
-$(body).on('click', '.my-objects-class>...>button', function(event){
+$(body).on('click', '.my-objects-class>[...]>button', function(event){
   event.target.object_.instanceMethod();
 }
 ```
 Rather than this:
 
 ```javascript
-$(body).on('click', '.my-objects-class>...>button', function(event){
+$(body).on('click', '.my-objects-class>[...]>button', function(event){
   $(event.target).parents('.my-objects-class')[0].object_.instanceMethod();
 }
 ```
