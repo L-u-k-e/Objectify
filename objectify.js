@@ -9,27 +9,27 @@ function register(instance, element_type, properties){
 //function to recursively tether an element and all of its children to 
 //an object. This function will NOT overwrite predefined object trees. 
 function __tether(instance, element){
-  if(element.object_){instance= element.object_;}
-  element.object_= instance;
+  if(element.object_){instance = element.object_;}
+  element.object_ = instance;
   //console.log(element + ' has been tethered to: ' + instance);
-  for(var i=0; i<element.children.length; i++){
+  for(var i =0; i<element.children.length; i++){
     __tether(instance, element.children[i]);
   }
 }
 
 //observe body for addition of new nodes and assign them the proper
 //object_ property if applicable.
-var __observer= new MutationObserver(function(mutations){
+var __observer = new MutationObserver(function(mutations){
   mutations.forEach(function(mutation){
-    var new_nodes= mutation.addedNodes;
+    var new_nodes = mutation.addedNodes;
     for(var i=0; i<new_nodes.length; i++){
-      var element= new_nodes[i];
+      var element = new_nodes[i];
       if(element.object_){
         __tether(element.object_, element);
       }
       else{
         try{
-          var parent_type= element.parentElement.object_;
+          var parent_type = element.parentElement.object_;
           if(parent_type){
             __tether(parent_type, element);
           }
