@@ -22,7 +22,7 @@ $(body).on('click', '.my-objects-class>...>button', function(event){
   $(event.target).parents('.my-objects-class')[0].object_.instanceMethod();
 }
 ```
-The above example even assuming that you have [`jQuery`](https://jquery.com/) included in your project and that you can identify the element that you tethered your object to with a css selector. If this is not the case, things can get messy and regardless, its not something you want to repeat in muiltiple event listeners. 
+The above example is even assuming that you have [`jQuery`](https://jquery.com/) included in your project and that you can identify the element that you tethered your object to with a css selector. If this is not the case, things can get messy and regardless, its not something you want to repeat in muiltiple event listeners. 
 
 You could also manually insert the `object_` property on the elements that you need it on when you create them inside your class definition, but neither approach is very DRY.
 
