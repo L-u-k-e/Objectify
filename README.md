@@ -31,7 +31,7 @@ By implementing a constrained heredity on the DOM elements themselves, **`Object
 #How do I use it? 
 
 These are the three variables you need to know about:
- - `register` is a function that you use to register your objects when they are first instantiated. It's just a helper function that sets up the initial linking. Rather than try to explain with words, here's the code itself:
+ - `register` is a function that you use to register your objects when they are first instantiated. It's just a helper function that sets up the initial linking. Rather than trying to explain with words, here's the code itself:
 
  ```javascript
   function register(instance, element_type, properties){  
