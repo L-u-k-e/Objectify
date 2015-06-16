@@ -82,4 +82,11 @@ console.log(div.object_); //MyClass:{ element:[HTMLDivElement], div1:[HTMLDivEle
 $('body').on('click','.my-class>div>div>button', function(event){
   event.target.object_.sayHi(); //Hi from inside MyClass!
 });
-``
+```
+
+#Reserved Words:
+These are the public variable names used by **`Objectify`**. Don't give your variables these names:
+ - `register`
+ - `__observer`
+ - `__config`
+ -` __tether`
