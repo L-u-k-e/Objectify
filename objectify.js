@@ -17,7 +17,7 @@ function __tether(instance, element){
   }
 }
 
-//observe body for addition of new nodes and assign them the proper
+//observe document for addition of new nodes and assign them the proper
 //object_ property if applicable.
 var __observer = new MutationObserver(function(mutations){
   mutations.forEach(function(mutation){
