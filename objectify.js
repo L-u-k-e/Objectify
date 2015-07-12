@@ -78,8 +78,12 @@ __observer.observe(document, __config);
 function __tether(instance, element){
   if(element.object_){ instance = element.object_; }
   element.object_ = instance;
-  //console.log(element + ' has been tethered to: ' + instance);
-  for(var i=0; i<element.children.length; i++){
-    __tether(instance, element.children[i]);
+  
+  var kids = element.children;
+  if(!kids) return;
+  
+  var stop = kids.length;
+  for(var i=0; i<stop; i++){
+    __tether(instance, kids[i]);
   }
 }
