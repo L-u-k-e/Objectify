@@ -1,5 +1,5 @@
 # What is Objectify?
-Objectify is a leightweight framework that aims to clean up event listeners and eliminate boilerplate code in class definitions. 
+Objectify is a leightweight library that aims to clean up event listeners and eliminate boilerplate code in class definitions. 
 
 #What problem does it solve?
 Many aspects of GUI programming (and Javascript in general) lend themselves to an object oriented approach. You can define a class that churns out objects which are represented by elements in the DOM and implement event listeners that delegate all their work to instance methods (which have useful instance variables, and also other methods, at their disposal).
