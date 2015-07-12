@@ -34,7 +34,7 @@ These are the three variables you need to know about:
  - `register` is a function that you use to register your objects when they are first instantiated. It's just a helper function that sets up the initial linking. Rather than trying to explain with words, here's the code itself:
 
  ```javascript
-  function register(instance, element_type, properties){  
+  register: function(instance, element_type, properties){  
     instance.element = document.createElement(element_type);
     instance.element.object_ = instance;
     for(var key in properties){
@@ -50,7 +50,7 @@ These are the three variables you need to know about:
 
 ```javascript
 function MyClass(){
-  register(this, 'div', {className: 'my-class'});
+  OBJECTIFY.register(this, 'div', {className: 'my-class'});
   
   this.div1 = document.createElement('div');
   this.element.appendChild(this.div1);
@@ -83,11 +83,4 @@ $('body').on('click','.my-class>div>div>button', function(event){
   event.target.object_.sayHi(); //Hi from inside MyClass!
 });
 ```
-
-#Reserved Words:
-These are the public variable names used by **`Objectify`**. Don't give your variables these names:
- - `register`
- - `__observer`
- - `__config` 
- - ` __tether`
 
