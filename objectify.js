@@ -8,6 +8,22 @@
 
 var OBJECTIFY = (function() {
 
+  // Recursively tether an element and all of its children to object. 
+  // This function will NOT overwrite predefined object trees. 
+  function tether(instance, element){
+    if(element.object_){ instance = element.object_; }
+    element.object_ = instance;
+    
+    var kids = element.children;
+    if(!kids) return;
+    
+    var stop = kids.length;
+    for(var i=0; i<stop; i++){
+      tether(instance, kids[i]);
+    }
+  }
+
+
   // Observe document for the addition of new nodes.
   // Assign them the proper object_ property if applicable.
   var observer = new MutationObserver(function(mutations) {
@@ -23,25 +39,8 @@ var OBJECTIFY = (function() {
       }
     });
   });
-  var config { subtree: true, childList: true };
-  var observer.observe(document, __config);
-
-
-
-  // Recursively tether an element and all of its children to object. 
-  // This function will NOT overwrite predefined object trees. 
-  function tether(instance, element){
-    if(element.object_){ instance = element.object_; }
-    element.object_ = instance;
-    
-    var kids = element.children;
-    if(!kids) return;
-    
-    var stop = kids.length;
-    for(var i=0; i<stop; i++){
-      tether(instance, kids[i]);
-    }
-  }
+  var config = { subtree: true, childList: true };
+  observer.observe(document, config);
 
 
   /*
